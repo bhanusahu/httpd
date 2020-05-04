@@ -1,0 +1,1 @@
+FROM registry.access.redhat.com/rhel8/httpd-24
