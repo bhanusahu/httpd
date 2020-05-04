@@ -1,3 +1,4 @@
 FROM httpd:2.4
 MAINTAINER BhanuSahu
+RUN echo "ServerName localhost" >> /etc/httpd/conf/httpd.conf
 EXPOSE 8080
