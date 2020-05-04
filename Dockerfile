@@ -2,6 +2,7 @@ FROM centos:latest
 MAINTAINER BhanuSahu
 RUN yum -y install httpd
 COPY index.html /var/www/html/
-RUN echo "ServerName localhost" | tee /etc/apache2/conf-available/fqdn.conf && \ a2enconf fqdn
+RUN sed -i 's/Listen 80/Listen 8080/' /etc/httpd/conf/httpd.conf
+RUN sed -i 's/#ServerName www.example.com:80/ServerName localhost/' /etc/httpd/conf/httpd.conf
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 EXPOSE 8080
