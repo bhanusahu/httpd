@@ -1,7 +1,7 @@
 FROM registry.access.redhat.com/rhel7:latest
 USER root 
 # Update image
-RUN yum install httpd -y
+RUN yum -y install httpd
 
 # Add configuration file
 
